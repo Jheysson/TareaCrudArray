@@ -15,7 +15,7 @@ public class CEGanadoVacuno {
 		this.sexo = sexo;
 	}
 //pruebassssssssss
-
+//guardando desde spring
 
 	public int getCuia() {
 		return cuia;
