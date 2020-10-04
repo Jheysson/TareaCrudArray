@@ -4,12 +4,12 @@ public class CEGanadoVacuno {
 	private int cuia;
 	private String aliasGanadoVacuno;
 	private String sexo;
-	//comentarios
+
 	public CEGanadoVacuno() {
 		
 	}
 	
-	
+	//pruebas
 
 	public CEGanadoVacuno(int cuia, String aliasGanadoVacuno, String sexo) {
 		super();
