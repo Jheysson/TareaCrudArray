@@ -8,9 +8,6 @@ public class CEGanadoVacuno {
 	public CEGanadoVacuno() {
 		
 	}
-	
-	//pruebas
-//sasasasasa
 	public CEGanadoVacuno(int cuia, String aliasGanadoVacuno, String sexo) {
 		super();
 		this.cuia = cuia;
