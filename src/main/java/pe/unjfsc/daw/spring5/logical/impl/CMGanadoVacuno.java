@@ -14,7 +14,7 @@ import pe.unjfsc.daw.spring5.logical.CAGanadoVacuno;
 
 public class CMGanadoVacuno extends CAGanadoVacuno {
 
-	private static final Logger log = LoggerFactory.getLogger("CAGanadoVacuno");
+	private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 	
 	private CEGanadoVacuno moCEGanadoVacuno;
 	private ArrayList<CEGanadoVacuno> arrayGanadoVacuno;
@@ -22,7 +22,7 @@ public class CMGanadoVacuno extends CAGanadoVacuno {
 	
 	String Etapa = "";
 	
-	LocalDate fechaNac = LocalDate.of(2016, 3, 7);
+	LocalDate fechaNac = LocalDate.of(2017, 3, 7);
 	LocalDate ahora = LocalDate.now();
 	
 	public CMGanadoVacuno() {
