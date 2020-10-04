@@ -8,7 +8,7 @@ public abstract class CAGanadoVacuno {
 	public abstract void saveGanadoVacuno(CEGanadoVacuno poCEGanadoGacuno);
 	public abstract void updateGanadoVacuno(CEGanadoVacuno poCEGanadoVacuno);
 	public abstract void deleteGanadoVacuno(int CUIA);
-	
 	public abstract ArrayList<CEGanadoVacuno> showAll();
 	public abstract CEGanadoVacuno showByCUIA(int CUIA);
+	
 }
