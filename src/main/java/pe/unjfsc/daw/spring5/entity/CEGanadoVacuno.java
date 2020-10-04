@@ -16,6 +16,7 @@ public class CEGanadoVacuno {
 	}
 //pruebassssssssss
 //guardando desde spring
+	//otra pueba XD
 
 	public int getCuia() {
 		return cuia;
