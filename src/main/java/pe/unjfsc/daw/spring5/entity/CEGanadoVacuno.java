@@ -4,21 +4,19 @@ public class CEGanadoVacuno {
 	private int cuia;
 	private String aliasGanadoVacuno;
 	private String sexo;
-	
+
 	public CEGanadoVacuno() {
 		
 	}
-	
-	
-
 	public CEGanadoVacuno(int cuia, String aliasGanadoVacuno, String sexo) {
 		super();
 		this.cuia = cuia;
 		this.aliasGanadoVacuno = aliasGanadoVacuno;
 		this.sexo = sexo;
 	}
-
-
+//pruebassssssssss
+//guardando desde spring
+	//otra pueba XD
 
 	public int getCuia() {
 		return cuia;

@@ -28,6 +28,7 @@ public class CMGanadoVacuno extends CAGanadoVacuno {
 	@Override
 	public void saveGanadoVacuno(CEGanadoVacuno poCEGanadoGacuno) {
 		log.info("GUARDANDO EN EL REGISTRO CON EL CUIA "+poCEGanadoGacuno.getCuia());
+		//Salvar
 		arrayGanadoVacuno.add(poCEGanadoGacuno);
 	}
 
