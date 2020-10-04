@@ -4,7 +4,7 @@ public class CEGanadoVacuno {
 	private int cuia;
 	private String aliasGanadoVacuno;
 	private String sexo;
-	
+	//comentarios
 	public CEGanadoVacuno() {
 		
 	}
