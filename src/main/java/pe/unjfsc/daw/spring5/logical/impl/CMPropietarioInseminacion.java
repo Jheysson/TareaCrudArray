@@ -40,7 +40,7 @@ private static final Logger log = LoggerFactory.getLogger("CAPropietarioInsemina
 		while (it.hasNext()) {
 			moCEPropietarioInse = it.next();
 			if (moCEPropietarioInse.getcodigo() == poCEPropiInseminacion.getcodigo()) {
-				log.info("ACTUALIZANDO EL REGISTRO CON EL CUIA "+poCEPropiInseminacion.getcodigo()+"...");
+				log.info("ACTUALIZANDO EL REGISTRO CON EL CODIGO "+poCEPropiInseminacion.getcodigo()+"...");
 				
 				moCEPropietarioInse.setcodigo(poCEPropiInseminacion.getcodigo());
 				moCEPropietarioInse.setPeso(poCEPropiInseminacion.getPeso());

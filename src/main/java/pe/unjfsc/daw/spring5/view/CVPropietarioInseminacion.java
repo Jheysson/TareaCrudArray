@@ -6,9 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import pe.unjfsc.daw.spring5.entity.CEGanadoVacuno;
 import pe.unjfsc.daw.spring5.entity.CEPropietarioInseminacion;
-import pe.unjfsc.daw.spring5.logical.impl.CMGanadoVacuno;
 import pe.unjfsc.daw.spring5.logical.impl.CMPropietarioInseminacion;
 
 public class CVPropietarioInseminacion {
@@ -25,7 +23,7 @@ private static final Logger log = LoggerFactory.getLogger("CVPropietarioInsemina
 		log.info("Todos los registros: {}", oCMPropiInse.showAll());
 		
 		//Actualizar un registro 
-		CEPropietarioInseminacion oCEGanadoVacuno = new CEPropietarioInseminacion(620, 588.00, 1.68, "Establo actualizado", 25.00, "05/10/2020", 1, "Gyrolando","N/O");
+		CEPropietarioInseminacion oCEGanadoVacuno = new CEPropietarioInseminacion(520, 588.00, 1.68, "Establo actualizado", 25.00, "05/10/2020", 1, "Gyrolando","N/O");
 		
 		oCMPropiInse.updatePropiInseminacion(oCEGanadoVacuno);
 		
@@ -37,7 +35,7 @@ private static final Logger log = LoggerFactory.getLogger("CVPropietarioInsemina
 		log.info("Buscando registro con el codigo "+codigo+" :{} ",oCMPropiInse.showBycodigo(codigo));
 		
 		//Agregar un nuevo registro
-		CEPropietarioInseminacion oCMPropiInse2 = new CEPropietarioInseminacion(720, 594.00, 1.66, "Establo nuevo", 18.00, "06/10/2020", 1, "Brahman","N/O");
+		CEPropietarioInseminacion oCMPropiInse2 = new CEPropietarioInseminacion(620, 594.00, 1.66, "Establo nuevo", 18.00, "06/10/2020", 1, "Brahman","N/O");
 		oCMPropiInse.savePropiInseminacion(oCMPropiInse2);
 		
 		//Verificamos el último registro
