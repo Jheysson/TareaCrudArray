@@ -14,7 +14,7 @@ public class CEGanadoVacuno {
 		this.aliasGanadoVacuno = aliasGanadoVacuno;
 		this.sexo = sexo;
 	}
-
+//pruebassssssssss
 
 
 	public int getCuia() {
