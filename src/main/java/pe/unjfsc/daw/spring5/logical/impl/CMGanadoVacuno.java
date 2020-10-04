@@ -1,5 +1,8 @@
 package pe.unjfsc.daw.spring5.logical.impl;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -17,12 +20,14 @@ public class CMGanadoVacuno extends CAGanadoVacuno {
 	private ArrayList<CEGanadoVacuno> arrayGanadoVacuno;
 	private CEGanadoVacuno oCEGanadoVacunoResponse;
 	
+	String Etapa = "";
+	
+	LocalDate fechaNac = LocalDate.of(2016, 3, 7);
+	LocalDate ahora = LocalDate.now();
+	
 	public CMGanadoVacuno() {
 		arrayGanadoVacuno = new ArrayList<CEGanadoVacuno>();
-		arrayGanadoVacuno.add(new CEGanadoVacuno(2001, "Maria", "Hembra"));
-		arrayGanadoVacuno.add(new CEGanadoVacuno(2002, "José", "Macho"));
-		arrayGanadoVacuno.add(new CEGanadoVacuno(2003, "Alixon", "Hembra"));
-		arrayGanadoVacuno.add(new CEGanadoVacuno(2004, "Alicia", "Hembra"));
+		arrayGanadoVacuno.add(new CEGanadoVacuno(2001, "Kent", "Macho", fechaNac, calcularEdad(fechaNac), asignarEtapa(calcularEdad(fechaNac))));
 	}
 	
 	@Override
@@ -85,10 +90,28 @@ public class CMGanadoVacuno extends CAGanadoVacuno {
 		}
 		return oCEGanadoVacunoResponse;
 	}
-
+	
+	
+	protected int calcularEdad(LocalDate fechaNaci) {		
+		int edad = (int) ChronoUnit.MONTHS.between(fechaNaci, ahora);
+		return edad;
+	}
+	protected String asignarEtapa(int edad) {
+					
+		if(edad <= 4) {
+			Etapa = "Ternero";
+		}else if(edad > 4 && edad <=12) {
+			Etapa = "Destete";
+		}else if(edad > 12 && edad <=24) {
+			Etapa = "Becerro";
+		}else if(edad >= 24) {
+			Etapa = "Adulto";
+		}
+		return Etapa;
+	}	
+	
 	public void setoCEGanadoVacunoResponse(CEGanadoVacuno oCEGanadoVacunoResponse) {
 		this.oCEGanadoVacunoResponse = oCEGanadoVacunoResponse;
 	}
 
-	
 }

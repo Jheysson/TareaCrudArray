@@ -1,5 +1,8 @@
 package pe.unjfsc.daw.spring5.view;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -21,29 +24,30 @@ public class CVGanadoVacuno {
 		//Mostrar registros actuales
 		log.info("Todos los registros: {}", oCMGanadoVacuno.showAll());
 		
+		
 		//Actualizar un registro según su CUIA
-		CEGanadoVacuno oCEGanadoVacuno = new CEGanadoVacuno(2001,"Julia Editado","Hembra Editado");
-		oCMGanadoVacuno.updateGanadoVacuno(oCEGanadoVacuno);
+		//CEGanadoVacuno oCEGanadoVacuno = new CEGanadoVacuno(2001,"Julia Editado","Hembra Editado",fechaNac,10,"a");
+		//oCMGanadoVacuno.updateGanadoVacuno(oCEGanadoVacuno);
 		
 		//Mostramos los registros para verificar el cambio
-		log.info("Verificar actualización: {}",oCMGanadoVacuno.showAll());
+		//log.info("Verificar actualización: {}",oCMGanadoVacuno.showAll());
 		
 		//Buscamos solo un registro por el CUIA
-		int cuia = 2003;
-		log.info("Buscando registro con el CUIA "+cuia+" :{} ",oCMGanadoVacuno.showByCUIA(cuia));
+		//int cuia = 2003;
+		//log.info("Buscando registro con el CUIA "+cuia+" :{} ",oCMGanadoVacuno.showByCUIA(cuia));
 		
 		//Agregamos un nuevo registro
-		CEGanadoVacuno oCEGanadoVacuno2 = new CEGanadoVacuno(2004,"Nuevo José","Nuevo Macho");
-		oCMGanadoVacuno.saveGanadoVacuno(oCEGanadoVacuno2);
+		//CEGanadoVacuno oCEGanadoVacuno2 = new CEGanadoVacuno(2004,"Nuevo José","Nuevo Macho",fechaNac,10,"a");
+		//oCMGanadoVacuno.saveGanadoVacuno(oCEGanadoVacuno2);
 		
 		//Verificamos el último registro
-		log.info("Verificar último registro: {}",oCMGanadoVacuno.showAll());
+		//log.info("Verificar último registro: {}",oCMGanadoVacuno.showAll());
 		
 		//Eliminamos un registro por su cuia
-		oCMGanadoVacuno.deleteGanadoVacuno(2001);
+		//oCMGanadoVacuno.deleteGanadoVacuno(2001);
 		
 		//Verificamos si se eliminó
-		log.info("Verificar la eliminación: {}",oCMGanadoVacuno.showAll());
+		//log.info("Verificar la eliminación: {}",oCMGanadoVacuno.showAll());
 		
 		((ConfigurableApplicationContext) oCntx).close();
 	}
