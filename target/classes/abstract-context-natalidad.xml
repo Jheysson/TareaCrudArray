@@ -7,7 +7,7 @@
 	<bean id="idCENatalidad" class="pe.unjfsc.daw.spring5.entity.CENatalidad"></bean>
 	
 	
-	<bean id="idCMNatalidad" class="pe.unjfsc.daw.spring5.logical.impl.CMNatalidad">
+	<bean id="idCMANatalidad" class="pe.unjfsc.daw.spring5.logical.impl.CMANatalidad">
 		<property name="oCENatalidadResponse" ref="idCENatalidad"></property>
 	</bean>
 
