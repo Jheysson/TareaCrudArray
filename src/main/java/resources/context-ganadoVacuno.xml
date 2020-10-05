@@ -3,12 +3,20 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+
 	<bean id="idCEGanadoVacuno" class="pe.unjfsc.daw.spring5.entity.CEGanadoVacuno"></bean>
 	
-	
-	<bean id="idCMGanadoVacuno" class="pe.unjfsc.daw.spring5.logical.impl.CMGanadoVacuno">
+	<!-- Bean para el uso de métodos con clase Interface -->
+	<bean id="idCMIGanadoVacuno" class="pe.unjfsc.daw.spring5.logical.impl.CMIGanadoVacuno">
 		<property name="oCEGanadoVacunoResponse" ref="idCEGanadoVacuno"></property>
+		<property name="oCEGanadoVacunoRequest" ref="idCEGanadoVacuno"></property>
+	</bean>
+	
+	
+	<!-- Bean para el uso de métodos con clase Abstract -->
+	<bean id="idCMAGanadoVacuno" class="pe.unjfsc.daw.spring5.logical.impl.CMAGanadoVacuno">
+		<property name="oCEGanadoVacunoResponse" ref="idCEGanadoVacuno"></property>
+		<property name="oCEGanadoVacunoRequest" ref="idCEGanadoVacuno"></property>
 	</bean>
 
 </beans>
