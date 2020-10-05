@@ -8,15 +8,15 @@ import org.slf4j.LoggerFactory;
 import pe.unjfsc.daw.spring5.entity.CEPropietarioInseminacion;
 import pe.unjfsc.daw.spring5.logical.CAPropietarioInseminacion;
 
-public class CMPropietarioInseminacion extends CAPropietarioInseminacion{
+public class CMIPropietarioInseminacion extends CAPropietarioInseminacion{
 	
-private static final Logger log = LoggerFactory.getLogger("CAPropietarioInseminacion");
+private static final Logger log = LoggerFactory.getLogger("CMIPropietarioInseminacion");
 	
 	private CEPropietarioInseminacion moCEPropietarioInse;
 	private ArrayList<CEPropietarioInseminacion> arrayPropietarioInseminacion;
 	private CEPropietarioInseminacion oCEPropietarioInseResponse;
 	
-	public CMPropietarioInseminacion() {
+	public CMIPropietarioInseminacion() {
 		arrayPropietarioInseminacion = new ArrayList<CEPropietarioInseminacion>();
 		arrayPropietarioInseminacion.add(new CEPropietarioInseminacion(120, 620.00, 1.61, "Establo 1", 20.00, "30/09/2020", 1, "Hereford","N/O"));
 		arrayPropietarioInseminacion.add(new CEPropietarioInseminacion(220, 600.00, 1.63, "Establo 2", 24.00, "02/10/2020", 1, "Charolais","N/O"));
