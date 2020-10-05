@@ -1,9 +1,11 @@
 package pe.unjfsc.daw.spring5.entity;
 
+import java.time.LocalDate;
+
 public class CENatalidad {
 	private int cuia;
 	private String sexo;
-	private String fecha_nacimiento;
+	private LocalDate fecha_nacimiento;
 	private String genotipo;
 	private double peso;
 	private int cuiaGanado;
@@ -14,7 +16,7 @@ public class CENatalidad {
 		
 	}
 	
-	public CENatalidad(int cuia, String sexo, String fecha_nacimiento, String genotipo, double peso, int cuiaGanado, String observacion, int estado) {
+	public CENatalidad(int cuia, String sexo, LocalDate fecha_nacimiento, String genotipo, double peso, int cuiaGanado, String observacion, int estado) {
 		super();
 		this.cuia = cuia;
 		this.sexo = sexo;
@@ -38,10 +40,10 @@ public class CENatalidad {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public String getFecha_nacimiento() {
+	public LocalDate getFecha_nacimiento() {
 		return fecha_nacimiento;
 	}
-	public void setFecha_nacimiento(String fecha_nacimiento) {
+	public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
 		this.fecha_nacimiento = fecha_nacimiento;
 	}
 	public String getGenotipo() {
@@ -74,6 +76,7 @@ public class CENatalidad {
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -96,4 +99,5 @@ public class CENatalidad {
 		builder.append("]");
 		return builder.toString();
 	}
+	
 }

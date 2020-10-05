@@ -7,7 +7,7 @@
 	<bean id="idCEPropietarioInse" class="pe.unjfsc.daw.spring5.entity.CEPropietarioInseminacion"></bean>
 	
 	
-	<bean id="idCMPropietarioInse" class="pe.unjfsc.daw.spring5.logical.impl.CMPropietarioInseminacion">
+	<bean id="idCMAPropietarioInse" class="pe.unjfsc.daw.spring5.logical.impl.CMAPropietarioInseminacion">
 		<property name="oCEPropietarioInseResponse" ref="idCEPropietarioInse"></property>
 	</bean>
 

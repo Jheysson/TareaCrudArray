@@ -24,7 +24,7 @@ public class CMAGanadoVacuno extends CAGanadoVacuno {
 	private String etapa = "";
 	private LocalDate fechActual = LocalDate.now();
 	
-	
+	 
 	public CMAGanadoVacuno() {
 		arrayGanadoVacuno = new ArrayList<CEGanadoVacuno>();
 		arrayGanadoVacuno.add(new CEGanadoVacuno(2001,"Maria", LocalDate.of(2017, 3, 7), "Hembra", 2, "Adulto", 430.0, 1.4, "Producción", "Normal", "Heredord", "Leche", "Autoctono", 0, 0));

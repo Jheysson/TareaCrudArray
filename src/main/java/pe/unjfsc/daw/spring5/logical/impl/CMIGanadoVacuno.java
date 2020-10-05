@@ -24,7 +24,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 	private LocalDate fechActual = LocalDate.now();
 	
 	
-	public CMIGanadoVacuno() {
+	public CMIGanadoVacuno() { 
 		arrayGanadoVacuno = new ArrayList<CEGanadoVacuno>();
 		arrayGanadoVacuno.add(new CEGanadoVacuno(2001,"Maria", LocalDate.of(2017, 3, 7), "Hembra", 2, "Adulto", 430.0, 1.4, "Producción", "Normal", "Heredord", "Leche", "Autoctono", 0, 0));
 		arrayGanadoVacuno.add(new CEGanadoVacuno(2002, "Juana", LocalDate.of(2017, 3, 5), "Hembra", 2, "Adulto", 450.0, 1.5, "Producción", "Normal", "Hereford", "Leche", "Comprado", 0, 0));

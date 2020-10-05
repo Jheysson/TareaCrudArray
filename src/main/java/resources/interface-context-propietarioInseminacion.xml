@@ -4,11 +4,11 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="idCENatalidad" class="pe.unjfsc.daw.spring5.entity.CENatalidad"></bean>
+	<bean id="idCEPropietarioInse" class="pe.unjfsc.daw.spring5.entity.CEPropietarioInseminacion"></bean>
 	
 	
-	<bean id="idCMNatalidad" class="pe.unjfsc.daw.spring5.logical.impl.CMNatalidad">
-		<property name="oCENatalidadResponse" ref="idCENatalidad"></property>
+	<bean id="idCMIPropietarioInse" class="pe.unjfsc.daw.spring5.logical.impl.CMIPropietarioInseminacion">
+		<property name="oCEPropietarioInseResponse" ref="idCEPropietarioInse"></property>
 	</bean>
 
 </beans>
