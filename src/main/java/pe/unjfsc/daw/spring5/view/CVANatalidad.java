@@ -14,7 +14,7 @@ import pe.unjfsc.daw.spring5.logical.impl.CMANatalidad;
 public class CVANatalidad {
 	private static final Logger log = LoggerFactory.getLogger("CVNatalidad");
 	public static void main(String[] args) {
-		ApplicationContext oCntx = new ClassPathXmlApplicationContext("abstract-context-natalidad.xml");
+		ApplicationContext oCntx = new ClassPathXmlApplicationContext("context-Natalidad.xml");
 		
 		log.info("Context: {}",oCntx);
 		CMANatalidad oCMNatalidad = (CMANatalidad) oCntx.getBean("idCMANatalidad");
