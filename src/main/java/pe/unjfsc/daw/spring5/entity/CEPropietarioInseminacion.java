@@ -14,11 +14,11 @@ public class CEPropietarioInseminacion {
 	
 public CEPropietarioInseminacion() {}
 	
-	public CEPropietarioInseminacion(int Codigo, double peso, double talla, String lugar, double precio, 
+	public CEPropietarioInseminacion(int codigo, double peso, double talla, String lugar, double precio, 
 	String fechcompra, int estado, String genotipo, String obse) {
 		
 		super();
-		this.codigo = Codigo;
+		this.codigo = codigo;
 		this.peso = peso;
 		this.talla = talla;
 		this.lugar= lugar;
@@ -33,8 +33,8 @@ public CEPropietarioInseminacion() {}
 		return codigo;
 	}
 
-	public void setcodigo(int Codigo) {
-		Codigo = codigo;
+	public void setcodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public double getPeso() {
