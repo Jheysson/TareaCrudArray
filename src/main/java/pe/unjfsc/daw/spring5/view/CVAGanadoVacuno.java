@@ -48,9 +48,9 @@ private static final Logger log = LoggerFactory.getLogger("CVIGanadoVacuno");
 				LocalDate.of(2020, 5, 24),	//Fecha de nacimiento
 				"Hembra", 400, 1.5,			//sexo, peso(kg), talla(m)
 				"Producción", "Normal",		//Estado activo, estado animal
-				"Brahman", "Leche",
-				"Autoctono", 2003,
-				2001);
+				"Brahman", "Leche",			//Genotipo, tipo
+				"Autoctono", 2003,			//origen, cuiaMadre
+				2001);						//cuiaPadre
 		oCMAGanadoVacuno.saveGanadoVacuno(oCEGanadoVacuno2);
 		 
 		//Verificamos el último registro
