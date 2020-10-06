@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import pe.unjfsc.daw.spring5.entity.CEGanadoVacuno;
+import pe.unjfsc.daw.spring5.logical.impl.CMAGanadoVacuno;
 import pe.unjfsc.daw.spring5.logical.impl.CMIGanadoVacuno;
 
 public class CVIGanadoVacuno {
@@ -19,47 +20,47 @@ private static final Logger log = LoggerFactory.getLogger("CVIGanadoVacuno");
 		
 		log.info("Context: {}",oCntx);
 		
-		CMIGanadoVacuno oCMIGanadoVacuno = (CMIGanadoVacuno) oCntx.getBean("idCMIGanadoVacuno");
+		CMAGanadoVacuno oCMAGanadoVacuno = (CMAGanadoVacuno) oCntx.getBean("idCMAGanadoVacuno");
 		//Mostrar registros actuales
-		log.info("Todos los registros: {}", oCMIGanadoVacuno.showAll());
+		log.info("Todos los registros: {}", oCMAGanadoVacuno.showAll());
 		
 		
 		//Actualizar un registro según su CUIA
 		CEGanadoVacuno oCEGanadoVacuno = 
-				new CEGanadoVacuno(2001,
-						"EDITADO Alicia",
-						LocalDate.of(2018, 5, 24),
-						"Hembra", 390, 1.4,
-						"Inactivo", "Normal",
-						"Brahman", "Leche",
-						"Comprado", 0,
-						0);
-		oCMIGanadoVacuno.updateGanadoVacuno(oCEGanadoVacuno);
+				new CEGanadoVacuno(2001,			//cuia
+						"EDITADO Alicia",			//alias
+						LocalDate.of(2018, 5, 24),	//Fecha de nacimiento
+						"Hembra", 390, 1.4,			//sexo, peso(kg), talla(m)
+						"Inactivo", "Normal",		//Estado activo, estado animal
+						"Brahman", "Leche",			//Genotipo, tipo
+						"Comprado", 0,				//origen, cuiaMadre
+						0);							//cuiaPadre
+		oCMAGanadoVacuno.updateGanadoVacuno(oCEGanadoVacuno);
 		
 		//Buscamos solo un registro por el CUIA
 		int cuia = 2001;
-		oCMIGanadoVacuno.showByCUIA(cuia);
+		oCMAGanadoVacuno.showByCUIA(cuia);
 		
 		//Agregamos un nuevo registro
 		CEGanadoVacuno oCEGanadoVacuno2 = new CEGanadoVacuno(
-				2004,
-				"NUEVO ROBERTA",
-				LocalDate.of(2020, 5, 24),
-				"Hembra", 400, 1.5,
-				"Producción", "Normal",
+				2004,						//cuia
+				"NUEVO ROBERTA",			//alias
+				LocalDate.of(2020, 5, 24),	//Fecha de nacimiento
+				"Hembra", 400, 1.5,			//sexo, peso(kg), talla(m)
+				"Producción", "Normal",		//Estado activo, estado animal
 				"Brahman", "Leche",
-				"Autoctono", 2001,
-				2006);
-		oCMIGanadoVacuno.saveGanadoVacuno(oCEGanadoVacuno2);
+				"Autoctono", 2003,
+				2001);
+		oCMAGanadoVacuno.saveGanadoVacuno(oCEGanadoVacuno2);
 		 
 		//Verificamos el último registro
-		log.info("Verificar último registro: {}",oCMIGanadoVacuno.showAll());
+		log.info("Verificar último registro: {}",oCMAGanadoVacuno.showAll());
 		
 		//Eliminamos un registro por su cuia
-		oCMIGanadoVacuno.deleteGanadoVacuno(2001);
+		oCMAGanadoVacuno.deleteGanadoVacuno(2001);
 		
 		//Verificamos si se eliminó
-		log.info("Verificar la eliminación: {}",oCMIGanadoVacuno.showAll());
+		log.info("Verificar la eliminación: {}",oCMAGanadoVacuno.showAll());
 		((ConfigurableApplicationContext) oCntx).close();
 		
 	}
