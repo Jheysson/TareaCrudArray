@@ -20,9 +20,9 @@ private static final Logger log = LoggerFactory.getLogger("CVIGanadoVacuno");
 		
 		log.info("Context: {}",oCntx);
 		
-		CMAGanadoVacuno oCMAGanadoVacuno = (CMAGanadoVacuno) oCntx.getBean("idCMAGanadoVacuno");
+		CMIGanadoVacuno oCMIGanadoVacuno = (CMIGanadoVacuno) oCntx.getBean("idCMIGanadoVacuno");
 		//Mostrar registros actuales
-		log.info("Todos los registros: {}", oCMAGanadoVacuno.showAll());
+		log.info("Todos los registros: {}", oCMIGanadoVacuno.showAll());
 		
 		
 		//Actualizar un registro según su CUIA
@@ -35,11 +35,11 @@ private static final Logger log = LoggerFactory.getLogger("CVIGanadoVacuno");
 						"Brahman", "Leche",			//Genotipo, tipo
 						"Comprado", 0,				//origen, cuiaMadre
 						0);							//cuiaPadre
-		oCMAGanadoVacuno.updateGanadoVacuno(oCEGanadoVacuno);
+		oCMIGanadoVacuno.updateGanadoVacuno(oCEGanadoVacuno);
 		
 		//Buscamos solo un registro por el CUIA
 		int cuia = 2001;
-		oCMAGanadoVacuno.showByCUIA(cuia);
+		oCMIGanadoVacuno.showByCUIA(cuia);
 		
 		//Agregamos un nuevo registro
 		CEGanadoVacuno oCEGanadoVacuno2 = new CEGanadoVacuno(
@@ -51,16 +51,16 @@ private static final Logger log = LoggerFactory.getLogger("CVIGanadoVacuno");
 				"Brahman", "Leche",			//Genotipo, tipo
 				"Autoctono", 2003,			//origen, cuiaMadre
 				2001);						//cuiaPadre
-		oCMAGanadoVacuno.saveGanadoVacuno(oCEGanadoVacuno2);
+		oCMIGanadoVacuno.saveGanadoVacuno(oCEGanadoVacuno2);
 		 
 		//Verificamos el último registro
-		log.info("Verificar último registro: {}",oCMAGanadoVacuno.showAll());
+		log.info("Verificar último registro: {}",oCMIGanadoVacuno.showAll());
 		
 		//Eliminamos un registro por su cuia
-		oCMAGanadoVacuno.deleteGanadoVacuno(2001);
+		oCMIGanadoVacuno.deleteGanadoVacuno(2001);
 		
 		//Verificamos si se eliminó
-		log.info("Verificar la eliminación: {}",oCMAGanadoVacuno.showAll());
+		log.info("Verificar la eliminación: {}",oCMIGanadoVacuno.showAll());
 		((ConfigurableApplicationContext) oCntx).close();
 		
 	}
