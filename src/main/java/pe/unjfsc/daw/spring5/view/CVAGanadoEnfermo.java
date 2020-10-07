@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import pe.unjfsc.daw.spring5.entity.CEGanadoEnfermo;
 import pe.unjfsc.daw.spring5.logical.impl.CMAGanadoEnfermo;
 
 public class CVAGanadoEnfermo {
@@ -18,18 +19,22 @@ public class CVAGanadoEnfermo {
 		Log.info("[EVL] Context: {}",oCntx);
 		CMAGanadoEnfermo oCMAGanadoEnfermo= (CMAGanadoEnfermo) oCntx.getBean("idCMAGanadoEnfermo");
 		
-				//CEGanadoEnfermo oCEGanadoEnfermo = new CEGanadoEnfermo(2020,"Mastitis", LocalDate.of(2020, 9, 1),"Mejora considerable", 1);
-				//log.info("[EVL] Todos los registros : {}" , oCMAGanadoEnfermo.consultaAll());
-				//log.info("[EVL] Solo un registro : {}" , oCMAGanadoEnfermo.consultarByCuia(2002));
-				//oCMAGanadoEnfermo.updateGanadoEnfermo(oCEGanadoEnfermo);
-				Log.info("[EVL] Todos los registros : {}" , oCMAGanadoEnfermo.consultaAll());
-				//oCMAGanadoEnfermo.deleteGanadoEnfermo(2002);
-				//log.info("[EVL] Todos los registros : {}" , oCMAGanadoEnfermo.consultarByCuia(2001));
-				//oCMAGanadoEnfermo.deleteGanadoEnfermo(2002);
-				//log.info("[EVL] Todos los registros : {}" , oCMAGanadoEnfermo.consultaAll());
-				//oCMAGanadoEnfermo.updateGanadoEnfermo(oCEGanadoEnfermo);
-				//oCMAGanadoEnfermo.saveGanadoEnfermo(oCEGanadoEnfermo);
-				//log.info("[EVL] Todos los registros : {}" , oCMAGanadoEnfermo.consultaAll());
+				Log.info("Todos los registros: {}", oCMAGanadoEnfermo.consultaAll());
+			
+				CEGanadoEnfermo oCEGanadoEnfermo = new CEGanadoEnfermo(2002,"Mastitis", LocalDate.of(2020, 9, 1),"Mejora considerable", 1);
+				oCMAGanadoEnfermo.updateGanadoEnfermo(oCEGanadoEnfermo);
+				Log.info("Actualizando un registro: {}", oCMAGanadoEnfermo.consultaAll());
+				
+				Log.info("Verificar actualización: {}",oCMAGanadoEnfermo.consultaAll());
+				
+				int cuia = 2002;
+				Log.info("Buscando registro con el CUIA "+cuia+" :{} ",oCMAGanadoEnfermo.consultarByCuia(cuia));
+				
+				Log.info("Verificar último registro: {}",oCMAGanadoEnfermo.consultaAll());
+				
+				oCMAGanadoEnfermo.deleteGanadoEnfermo(2001);
+				
+				Log.info("Verificar la eliminación: {}",oCMAGanadoEnfermo.consultaAll());
 				((ConfigurableApplicationContext) oCntx).close();
 
 			}
