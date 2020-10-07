@@ -43,7 +43,7 @@ private static final Logger log = LoggerFactory.getLogger("CVIGanadoVacuno");
 		
 		//Agregamos un nuevo registro
 		CEGanadoVacuno oCEGanadoVacuno2 = new CEGanadoVacuno(
-				2004,						//cuia
+				2005,						//cuia
 				"NUEVO ROBERTA",			//alias
 				LocalDate.of(2020, 5, 24),	//Fecha de nacimiento
 				"Hembra", 400, 1.5,			//sexo, peso(kg), talla(m)
@@ -55,7 +55,7 @@ private static final Logger log = LoggerFactory.getLogger("CVIGanadoVacuno");
 		 
 		//Verificamos el último registro
 		log.info("Verificar último registro: {}",oCMAGanadoVacuno.showAll());
-		
+
 		//Eliminamos un registro por su cuia
 		oCMAGanadoVacuno.deleteGanadoVacuno(2001);
 		

@@ -36,8 +36,11 @@ public class CMAGanadoVacuno extends CAGanadoVacuno {
 	public void saveGanadoVacuno(CEGanadoVacuno poCEGanadoVacuno) {
 		
 		boolean madreApta = buscarMadre(poCEGanadoVacuno);
+		
 		log.info("Madre apta: "+madreApta);
-		if (madreApta) {
+		
+		boolean verifExistente = verificarExiste(poCEGanadoVacuno);
+		if (madreApta && verifExistente) {
 			oCEGanadoVacunoRequest.setCuia(poCEGanadoVacuno.getCuia());
 			oCEGanadoVacunoRequest.setAliasGanadoVacuno(poCEGanadoVacuno.getAliasGanadoVacuno());
 			oCEGanadoVacunoRequest.setCuiaMadre(poCEGanadoVacuno.getCuiaMadre());
@@ -153,7 +156,8 @@ public class CMAGanadoVacuno extends CAGanadoVacuno {
 			Iterator<CEGanadoVacuno> it = arrayGanadoVacuno.iterator();
 			while(it.hasNext()) {
 				moCEGanadoVacuno = it.next();
-
+					
+				
 					if (moCEGanadoVacuno.getCuia() == oCEGanadoVacuno.getCuiaMadre()) {
 						log.info("SE ENCONTRÓ EL CUIA INGRESADO DE LA MADRE EN LOS REGISTROS ACTUALES");
 						if (moCEGanadoVacuno.getSexo().equals("Hembra") && moCEGanadoVacuno.getEdad()>18) {
@@ -177,6 +181,24 @@ public class CMAGanadoVacuno extends CAGanadoVacuno {
 		
 		return rpta;
 		
+	}protected boolean verificarExiste(CEGanadoVacuno oCEGanadoVacuno) {
+		boolean rpta = false;
+		
+		Iterator<CEGanadoVacuno> it = arrayGanadoVacuno.iterator();
+		
+		while(it.hasNext()) {
+			moCEGanadoVacuno = it.next();
+
+				if (moCEGanadoVacuno.getCuia() == oCEGanadoVacuno.getCuia()) {
+					log.info("EL CUIA QUE SE INTENTA REGISTRAR YA EXISTE");
+					rpta = false;
+					break;
+				}else {
+					rpta = true;
+				}
+			
+		}
+		return rpta;
 	}
 
 	public void setoCEGanadoVacunoResponse(CEGanadoVacuno oCEGanadoVacunoResponse) {
