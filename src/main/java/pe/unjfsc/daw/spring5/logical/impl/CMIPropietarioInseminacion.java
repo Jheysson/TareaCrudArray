@@ -15,6 +15,8 @@ private static final Logger log = LoggerFactory.getLogger("CMIPropietarioInsemin
 	private CEPropietarioInseminacion moCEPropietarioInse;
 	private ArrayList<CEPropietarioInseminacion> arrayPropietarioInseminacion;
 	private CEPropietarioInseminacion oCEPropietarioInseResponse;
+
+	private CEPropietarioInseminacion oCEPropietarioInseRequest;
 	
 	public CMIPropietarioInseminacion() {
 		arrayPropietarioInseminacion = new ArrayList<CEPropietarioInseminacion>();
@@ -27,9 +29,19 @@ private static final Logger log = LoggerFactory.getLogger("CMIPropietarioInsemin
 	
 	@Override
 	public void savePropiInseminacion(CEPropietarioInseminacion poCEPropietarioInse) {
-		log.info("GUARDANDO EN EL REGISTRO CON EL CODIGO "+poCEPropietarioInse.getcodigo());
-		//Salvar
-		arrayPropietarioInseminacion.add(poCEPropietarioInse);
+log.info("GUARDANDO REGISTRO CON EL CODIGO "+poCEPropietarioInse.getcodigo()+"...");
+		
+		moCEPropietarioInse.setcodigo(poCEPropietarioInse.getcodigo());
+		moCEPropietarioInse.setPeso(poCEPropietarioInse.getPeso());
+		moCEPropietarioInse.setTalla(poCEPropietarioInse.getTalla());
+		moCEPropietarioInse.setLugar(poCEPropietarioInse.getLugar());
+		moCEPropietarioInse.setPrecio(poCEPropietarioInse.getPrecio());
+		moCEPropietarioInse.setFechcompra(poCEPropietarioInse.getFechcompra());
+		moCEPropietarioInse.setEstado(poCEPropietarioInse.getEstado());
+		moCEPropietarioInse.setGenotipo(poCEPropietarioInse.getGenotipo());
+		moCEPropietarioInse.setObse(poCEPropietarioInse.getObse());
+	
+		arrayPropietarioInseminacion.add(moCEPropietarioInse);
 	}
 
 	@Override
@@ -53,6 +65,7 @@ private static final Logger log = LoggerFactory.getLogger("CMIPropietarioInsemin
 			}
 			
 		}
+		log.info("Verificar actualización: {}",showAll());
 	}
 
 	@Override
@@ -73,7 +86,6 @@ private static final Logger log = LoggerFactory.getLogger("CMIPropietarioInsemin
 
 	@Override
 	public ArrayList<CEPropietarioInseminacion> showAll() {
-		log.info("MOSTRANDO REGISTROS EXISTENTES...");
 		return arrayPropietarioInseminacion;
 	}
 
@@ -89,6 +101,8 @@ private static final Logger log = LoggerFactory.getLogger("CMIPropietarioInsemin
 			}
 			
 		}
+
+		log.info("{}",oCEPropietarioInseResponse);
 		return oCEPropietarioInseResponse;
 	}
 	
@@ -97,7 +111,9 @@ private static final Logger log = LoggerFactory.getLogger("CMIPropietarioInsemin
 		this.oCEPropietarioInseResponse = oCEPropietarioInseResponse;
 	}
 
-	
+	public void setoCEPropietarioInseRequest(CEPropietarioInseminacion oCEPropietarioInseRequest) {
+		this.oCEPropietarioInseRequest = oCEPropietarioInseRequest;
+	}	
 
 
 	

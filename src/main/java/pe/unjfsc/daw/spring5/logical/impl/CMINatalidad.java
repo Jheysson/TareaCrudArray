@@ -16,6 +16,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 	private CENatalidad moCENatalidad;
 	private ArrayList<CENatalidad> arrayNatalidad;
 	private CENatalidad oCENatalidadResponse;
+	private CENatalidad oCENatalidadRequest;
 	
 	public CMINatalidad() {
 		arrayNatalidad = new ArrayList<CENatalidad>();
@@ -88,5 +89,9 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 	}
 	public void setoCENatalidadResponse(CENatalidad oCENatalidadResponse) {
 		this.oCENatalidadResponse = oCENatalidadResponse;
+	}
+
+	public void setoCENatalidadRequest(CENatalidad oCENatalidadRequest) {
+		this.oCENatalidadRequest = oCENatalidadRequest;
 	}
 }

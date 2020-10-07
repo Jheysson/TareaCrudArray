@@ -52,7 +52,7 @@ private static final Logger log = LoggerFactory.getLogger("CVIGanadoVacuno");
 				"Autoctono", 2003,			//origen, cuiaMadre
 				2001);						//cuiaPadre
 		oCMIGanadoVacuno.saveGanadoVacuno(oCEGanadoVacuno2);
-		 
+		  
 		//Verificamos el último registro
 		log.info("Verificar último registro: {}",oCMIGanadoVacuno.showAll());
 		
